@@ -40,9 +40,9 @@ export class GraphView extends React.Component<Props, State> {
          const to = this.props.model.nodes[ link.to - 1 ].pos;
          this.ctx.beginPath();
          this.ctx.moveTo( from[ 0 ], from[ 1 ]);
-         this.ctx.lineWidth = 3;
+         this.ctx.lineWidth = 1;
          this.ctx.lineTo( to[ 0 ], to[ 1 ]);
-         this.ctx.strokeStyle = 'gray';
+         this.ctx.strokeStyle = '#444';
          this.ctx.stroke();
       }
 
@@ -50,14 +50,21 @@ export class GraphView extends React.Component<Props, State> {
       for( let node of this.props.model.nodes ) {
 
          /* rectangle */
+         this.ctx.shadowColor = '#BBB';
+         this.ctx.shadowBlur = 1;
+         this.ctx.shadowOffsetX = 3;
+         this.ctx.shadowOffsetY = 3;
          this.ctx.fillStyle = node.color;
          this.ctx.fillRect( node.pos[ 0 ] - node.width/2, node.pos[ 1 ] - node.height/2, node.width, node.height );
+         this.ctx.shadowOffsetX = 0;
+         this.ctx.shadowOffsetY = 0;
+
 
          /* label */
          this.ctx.fillStyle = 'white';
          this.ctx.textAlign = 'center';
          this.ctx.textBaseline = 'middle';
-         this.ctx.font = node.height + 'px sans-serif';
+         this.ctx.font = ( node.height > 5 && ( node.height - 5 ) || node.height ) + 'px sans-serif'; // if node.height > 5px we can make a font a bit smaller
          this.ctx.fillText( node.label, node.pos[ 0 ], node.pos[ 1 ]);
       }
    }
