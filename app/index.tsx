@@ -5,7 +5,7 @@ import './styles.less';
 import { GraphView } from './components/GraphView/graph-view';
 import { GraphModel } from './components/GraphView/graph-model';
 
-ReactDOM.render( <GraphView model={ new GraphModel([
+ReactDOM.render( <GraphView model = { new GraphModel([
    { label: 'first', pos: [ 100, 50 ], width: 50, height: 25, color: '#F9B642' },
    { label: 'second', pos: [ 100, 120 ], width: 100, height: 30, color: '#E82950' },
    { label: 'third', pos: [ 200, 120 ], width: 80, height: 40, color: '#1C74BA' },

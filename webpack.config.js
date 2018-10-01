@@ -41,7 +41,7 @@ module.exports = {
                      configFile: 'tsconfig.json',
                      transpileOnly: ! production,
                      experimentalWatchApi: ! production,
-                     happyPackMode: true, // typecheck in fork-ts-checker-webpack-plugin for build perf
+                     happyPackMode: true, // typecheck in fork-ts-checker-webpack-plugin for build performance
                   }
                }
             ],
@@ -90,7 +90,7 @@ module.exports = {
       ! production ? new ForkTsCheckerWebpackPlugin({ checkSyntacticErrors: true, tsconfig: './tsconfig.json' }) : _=>_,
       new webpack.ProgressPlugin({ profile: false }),
       new CleanWebpackPlugin([ 'dist' ], { root: __dirname, exclude: [ '.gitkeep' ], verbose: true }),
-      new webpack.HashedModuleIdsPlugin(), // so that file hashes don't change unexpectedl
+      new webpack.HashedModuleIdsPlugin(), // so that file hashes don't change unexpectedly
       new HtmlWebpackPlugin({
          hash: true,
          template: 'app/index.html'
@@ -98,6 +98,6 @@ module.exports = {
       new MiniCssExtractPlugin({
          filename: '[name].css',
       }),
-      new webpack.IgnorePlugin( /^\.\/locale$/, /moment$/ ), // ignore unwanted moment locales ( https://github.com/moment/moment/issues/2517#issuecomment-393704231 )
+      // new webpack.IgnorePlugin( /^\.\/locale$/, /moment$/ ), // ignore unwanted moment locales ( https://github.com/moment/moment/issues/2517#issuecomment-393704231 )
    ],
 };
