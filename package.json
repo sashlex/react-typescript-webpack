@@ -1,8 +1,7 @@
 {
    "name": "react-typescript-webpack",
    "version": "1.0.0",
-   "description": "",
-   "main": "index.js",
+   "description": "React, Typescript, Wwebpack boilerplate.",
    "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
       "preinstall": "npm install -g webpack webpack-cli rimraf",
@@ -11,7 +10,7 @@
       "clean": "rimraf dist/ .cache-loader/"
    },
    "author": "sashlex",
-   "license": "ISC",
+   "license": "MIT",
    "dependencies": {
       "@types/react": "^16.4.14",
       "@types/react-dom": "^16.0.8",
