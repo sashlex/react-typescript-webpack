@@ -1,0 +1,25 @@
+{
+   "compilerOptions": {
+      "outDir": "./dist/",
+      "rootDir": "./app/",
+      "sourceMap": false,
+      "noImplicitAny": true,
+      "module": "commonjs",
+      "target": "es5",
+      "allowJs": true,
+      "experimentalDecorators": true,
+      "esModuleInterop": true,
+      "noEmit": false,
+      "moduleResolution": "node",
+      "jsx": "react",
+      "lib": [ "es6", "es7", "dom" ]
+   },
+   "include": [
+      "./app/**/*"
+   ],
+   "exclude": [
+      "node_modules",
+      "dist"
+   ]
+}
+
