@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import { GraphModel } from './graph-model';
 import './graph.less';
 
@@ -28,7 +29,7 @@ interface State {
  * @param {GraphModel} model
  */
 export class GraphView extends React.Component<Props, State> {
-   private wrapper: any = document.getElementById( 'wrapper' );
+   private wrapper: any;
    private canvas: any;
    private ctx: any;
    private timeout: any; // rerender timeout
@@ -48,6 +49,7 @@ export class GraphView extends React.Component<Props, State> {
 
       /* prepare canvas */
       this.canvas = this.refs.canvas;
+      this.wrapper = ReactDOM.findDOMNode( this ).parentNode;
       this.ctx = this.canvas.getContext( '2d' )
       this.canvas.width = this.wrapper.clientWidth;
       this.canvas.height = this.wrapper.clientHeight;
