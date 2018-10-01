@@ -12,7 +12,7 @@ interface Props {
 }
 
 /**
- * Stat interface
+ * State interface
  * @type {object}
  * @property {any=} canvas
  * @property {any=} ctx
