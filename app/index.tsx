@@ -2,8 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import './styles.less';
 
-import { GraphView } from './components/GraphView/graph-view';
-import { GraphModel } from './components/GraphView/graph-model';
+import { GraphView, GraphModel } from './components/Graph';
 
 ReactDOM.render( <GraphView model = { new GraphModel([
    { label: 'first', pos: [ 100, 50 ], width: 50, height: 25, color: '#F9B642' },
