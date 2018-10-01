@@ -49,7 +49,7 @@ export class GraphView extends React.Component<Props, State> {
 
       /* prepare canvas */
       this.canvas = this.refs.canvas;
-      this.wrapper = ReactDOM.findDOMNode( this ).parentNode;
+      this.wrapper = ( ReactDOM.findDOMNode( this ) as HTMLInputElement ).parentNode;
       this.ctx = this.canvas.getContext( '2d' )
       this.canvas.width = this.wrapper.clientWidth;
       this.canvas.height = this.wrapper.clientHeight;
