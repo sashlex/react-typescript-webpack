@@ -179,6 +179,6 @@ export class GraphView extends React.Component<Props, State> {
    }
 
    render() {
-      return <canvas ref = 'canvas' className = 'graph' ></canvas>;
+      return <canvas ref = 'canvas' className = 'graph-canvas' ></canvas>;
    }
 }
